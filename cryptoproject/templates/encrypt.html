@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="container text-center mt-5 mb-5">
+    <form method='POST' enctype='multipart/form-data'>
+        {% csrf_token %}
+        <div class='input-group mb-3'>
+        <label class="input-group-text text-primary"><strong>Enter your file name:</strong></label>
+        <input class="form-control" type='text' name='filename'/>
+        </div>
+        <div class="input-group mb-3">
+        <label class="input-group-text mb-3 text-primary"><strong>Select file to upload:</strong></label>
+        <input class="form-control mb-3" type='file' name='file'/>
+        </div>
+        <button class="btn btn-primary mb-5" type='submit'>Submit</button>
+    </form>
+</div>
+
+{% if enc %}
+    <div class="container mt-5">
+        <strong>Download decryption key here</strong>
+        <a class="btn btn-primary" href=/media/keys/fernetpass.key download>Download key</a>
+    <br/>
+    </div>
+{% endif %}
+{% endblock content %}

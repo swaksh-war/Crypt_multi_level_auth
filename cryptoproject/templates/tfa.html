@@ -1,0 +1,13 @@
+{% extends "main2.html" %}
+{% block title %}Two Factor Page{% endblock title %}
+{% block content %}
+<br/><br/>
+<div class='m-5'>
+<form method='POST' class='mx-auto'>
+    {% csrf_token %}
+    <label class="text-primary"><strong>Enter Two Factor Key:</strong></label>
+    <input type='text' name='auth_token'/>
+    <button class="btn btn-primary" type='submit'>Submit</button>
+</form>
+</div>
+{% endblock content %}
